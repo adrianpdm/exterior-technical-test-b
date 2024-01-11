@@ -22,4 +22,4 @@ Query
 
 Example request
 
-[https://exterior-technical-test-api.vercel.app/property/availability/9000248877?checkin=2024-01-01&checkout=2024-01-03&number_of_room=1&guest_per_room=2](https://exterior-technical-test-api.vercel.app/property/availability/9000248877?checkin=2024-06-01&checkout=2024-06-03&number_of_room=1&guest_per_room=2)
+[https://exterior-technical-test-api.vercel.app/property/availability/9000248877?checkin=2024-06-01&checkout=2024-06-03&number_of_room=1&guest_per_room=2](https://exterior-technical-test-api.vercel.app/property/availability/9000248877?checkin=2024-06-01&checkout=2024-06-03&number_of_room=1&guest_per_room=2)
