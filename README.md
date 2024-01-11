@@ -4,6 +4,7 @@ Wisata App is a service providing hotel, apartment, villa, and alike for B2B con
 
 ## Objectives
 Replicate [this hotel deals page](https://wisata.app/stay/the-langham-jakarta-9001948244/?guest_per_room=2&number_of_room=1&checkin=2024-06-25&checkout=2024-06-26).
+
 Features to exclude:
 1. Search
 2. Auth (Login/Register)
@@ -11,6 +12,7 @@ Features to exclude:
 4. Info tab
 5. Room details
 6. Copy/screenshot offer
+
 Anything other than the excluded features above should be replicated.
 
 | <img width="360" src="https://github.com/adrianpdm/exterior-technical-test-b/blob/main/excluded-features.png"> |
