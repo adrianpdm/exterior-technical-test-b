@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background-color: #fff;
+}
+
+@media (min-width: 984px) {
+  .container {
+    max-width: 1032px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+  }
+}
+
+.ant-progress-text {
+  font-weight: 500;
+  font-size: 0.9375rem !important;
+  line-height: 1.4375rem;
+  color: rgb(161, 28, 180) !important;
+}
+
+.desktop-tab .ant-tabs-ink-bar-animated {
+  bottom: 2.25rem !important;
+}
+
+.desktop-tab > .ant-tabs-nav::before {
+  bottom: 2.3rem !important;
+}
+
+.mobile-tab .ant-tabs-ink-bar-animated {
+  left: -100vw !important;
+  width: 100rem !important;
+}
+
+.ant-carousel .slick-prev,
+.ant-carousel .slick-prev:hover,
+.ant-carousel .slick-prev:focus {
+  font-size: inherit;
+  left: 10px;
+  z-index: 2;
+  color: white;
+  opacity: 10;
+}
+
+.ant-carousel .slick-next,
+.ant-carousel .slick-next:hover,
+.ant-carousel .slick-next:focus {
+  font-size: inherit;
+  right: 10px;
+  z-index: 2;
+  color: white;
+  opacity: 10;
+}
