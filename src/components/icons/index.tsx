@@ -7,6 +7,8 @@ import IconTag from "./icon-tag";
 import IconGrid from "./icon-grid";
 import IconStrikefreebreakfast from "./icon-strikefreebreakfast";
 import IconStrikecreditcard from "./icon-strikecreditcard";
+import IconAsterisk from "./icon-asterisk";
+import IconStar from "./icon-star";
 
 export {
   IconArrowLeft,
@@ -18,4 +20,6 @@ export {
   IconGrid,
   IconStrikefreebreakfast,
   IconStrikecreditcard,
+  IconAsterisk,
+  IconStar,
 };

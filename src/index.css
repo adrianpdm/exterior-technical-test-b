@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 html {
+  font-family: "Roboto";
   background-color: #fff;
 }
 
@@ -25,11 +26,11 @@ html {
 }
 
 .desktop-tab .ant-tabs-ink-bar-animated {
-  bottom: 2.25rem !important;
+  bottom: 2.9rem !important;
 }
 
 .desktop-tab > .ant-tabs-nav::before {
-  bottom: 2.3rem !important;
+  bottom: 3rem !important;
 }
 
 .mobile-tab .ant-tabs-ink-bar-animated {

@@ -17,9 +17,19 @@ function App() {
         <BrowserRouter>
           <Routes>
             {/* PUBLIC ACCESS */}
+            <Route path="*" element={<PageNotFound />} />
             <Route path="/" element={<Layout />}>
               {
                 <>
+                  <Route
+                    path="/"
+                    element={
+                      <Navigate
+                        to="/stay/the-langham-jakarta-9001948244/?guest_per_room=2&number_of_room=1&checkin=2024-06-25&checkout=2024-06-26"
+                        replace
+                      />
+                    }
+                  />
                   <Route path="/stay/:slug" element={<DetailStay />} />
                 </>
               }
@@ -38,7 +48,6 @@ function PageNotFound() {
         404 | Page not found
       </h2>
       <div className="mt-5 text-center hover:text-monochrome-300">
-        <p>Or you don't have permission to access.</p>
         <a href="/">Click here to continue.</a>
       </div>
     </div>
