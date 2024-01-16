@@ -508,178 +508,183 @@ function DetailStay() {
   const RoomViewDesktop = () => (
     <>
       {groupedOfferList !== undefined ? (
-        Object.keys(groupedOfferList).map((roomName) =>
-          groupedOfferList[roomName].map((item: any, index: number) => (
-            <div key={index} className="flex flex-row gap-x-[1rem] mb-[2.5rem]">
-              <div className="rounded-lg flex flex-col hover:cursor-pointer">
-                <div className="relative">
-                  <img
-                    src={item.room_images[0].size_sm}
-                    className="max-w-[328px] rounded-t-xl border border-white"
-                  />
-                  <div className="absolute bottom-0 m-[1rem] flex flex-row items-center gap-[0.25rem] bg-white px-[0.25rem] rounded-md h-[24px]">
-                    <IconGrid fill="#000" height={16} width={16} />
-                    <p className="font-medium text-[12px] leading-[1rem]">
-                      See Photos
+        Object.keys(groupedOfferList).map((roomName) => (
+          <div className="flex flex-row gap-x-[1rem] mb-[2.5rem]">
+            <div className="rounded-lg flex flex-col hover:cursor-pointer">
+              <div className="relative">
+                <img
+                  src={groupedOfferList[roomName][0].room_images[0].size_sm}
+                  className="max-w-[328px] rounded-t-xl border border-white"
+                />
+                <div className="absolute bottom-0 m-[1rem] flex flex-row items-center gap-[0.25rem] bg-white px-[0.25rem] rounded-md h-[24px]">
+                  <IconGrid fill="#000" height={16} width={16} />
+                  <p className="font-medium text-[12px] leading-[1rem]">
+                    See Photos
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-row max-w-[328px] [&>*:first-child]:rounded-bl-xl [&>*:first-child]:border-l-0 [&>*:last-child]:rounded-br-xl [&>*:last-child]:border-r-0">
+                <img
+                  src={groupedOfferList[roomName][0].room_images[1].size_sm}
+                  className="w-1/3 max-w-[108px] max-h-[81px] border border-white"
+                />
+                <img
+                  src={groupedOfferList[roomName][0].room_images[2].size_sm}
+                  className="w-1/3 max-w-[108px] max-h-[81px] border border-white"
+                />
+                <img
+                  src={groupedOfferList[roomName][0].room_images[3].size_sm}
+                  className="w-1/3 max-w-[108px] max-h-[81px] border border-white"
+                />
+              </div>
+            </div>
+            <div className="rounded-lg border border-gray-300 min-w-[656px]">
+              <div className="rounded-t-lg border-b border-gray-300 p-[1rem]">
+                <p className="font-medium text-lg leading-[1.625rem]">
+                  {groupedOfferList[roomName][0].room_name}
+                </p>
+                <div className="flex flex-row items-center gap-[0.75rem]">
+                  <div className="flex flex-row items-center gap-[0.5rem]">
+                    <IconBed height={18} width={18} fill="rgba(0,0,0,.54)" />
+                    <p>{groupedOfferList[roomName][0].room_bed_groups}</p>
+                  </div>
+                  <div className="flex flex-row items-center gap-[0.5rem]">
+                    <IconFloorsize
+                      height={18}
+                      width={18}
+                      fill="rgba(0,0,0,.54)"
+                    />
+                    <p>
+                      {groupedOfferList[roomName][0].room_size_sqm}m<sup>2</sup>
                     </p>
                   </div>
                 </div>
-                <div className="flex flex-row max-w-[328px] [&>*:first-child]:rounded-bl-xl [&>*:first-child]:border-l-0 [&>*:last-child]:rounded-br-xl [&>*:last-child]:border-r-0">
-                  <img
-                    src={item.room_images[1].size_sm}
-                    className="w-1/3 max-w-[108px] max-h-[81px] border border-white"
-                  />
-                  <img
-                    src={item.room_images[2].size_sm}
-                    className="w-1/3 max-w-[108px] max-h-[81px] border border-white"
-                  />
-                  <img
-                    src={item.room_images[3].size_sm}
-                    className="w-1/3 max-w-[108px] max-h-[81px] border border-white"
-                  />
-                </div>
               </div>
-              <div className="rounded-lg border border-gray-300 min-w-[656px]">
-                <div className="rounded-t-lg border-b border-gray-300 p-[1rem]">
-                  <p className="font-medium text-lg leading-[1.625rem]">
-                    {item.room_name}
-                  </p>
-                  <div className="flex flex-row items-center gap-[0.75rem]">
-                    <div className="flex flex-row items-center gap-[0.5rem]">
-                      <IconBed height={18} width={18} fill="rgba(0,0,0,.54)" />
-                      <p>{item.room_bed_groups}</p>
-                    </div>
-                    <div className="flex flex-row items-center gap-[0.5rem]">
-                      <IconFloorsize
-                        height={18}
-                        width={18}
-                        fill="rgba(0,0,0,.54)"
-                      />
-                      <p>
-                        {item.room_size_sqm}m<sup>2</sup>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="border-t border-gray-300 p-[1rem]">
-                  {item.meal_plan_description === "" ? (
-                    <div className="flex flex-row items-center gap-[0.5rem]">
-                      <IconStrikefreebreakfast
-                        fill="#000"
-                        width={16}
-                        height={16}
-                      />
-                      Without Breakfast
-                    </div>
-                  ) : (
-                    <div className="flex flex-row items-center gap-[0.5rem]">
-                      <IconStrikefreebreakfast
-                        fill="#000"
-                        width={16}
-                        height={16}
-                      />
-                      Free Breakfast
-                    </div>
-                  )}
+              {groupedOfferList[roomName].map((item: any) => (
+                <>
+                  <div className="border-t border-gray-300 p-[1rem]">
+                    {item.meal_plan_description === "" ? (
+                      <div className="flex flex-row items-center gap-[0.5rem]">
+                        <IconStrikefreebreakfast
+                          fill="#000"
+                          width={16}
+                          height={16}
+                        />
+                        Without Breakfast
+                      </div>
+                    ) : (
+                      <div className="flex flex-row items-center gap-[0.5rem]">
+                        <IconStrikefreebreakfast
+                          fill="#000"
+                          width={16}
+                          height={16}
+                        />
+                        Free Breakfast
+                      </div>
+                    )}
 
-                  {item.cancel_policy_description === "Non-refundable" ? (
-                    <div className="flex flex-row items-center gap-[0.5rem]">
-                      <IconStrikecreditcard
-                        fill="#e82127"
-                        width={16}
-                        height={16}
-                      />
-                      <p className="text-[#e82127]">Non-refundable</p>
-                    </div>
-                  ) : (
-                    <div className="flex flex-row items-center gap-[0.5rem]">
-                      <IconCreditcard fill="#3d944e" width={16} height={16} />
-                      <p className="text-[#3d944e]">
-                        {item.cancel_policy_description}
-                      </p>
-                    </div>
-                  )}
-                </div>
-                <div className="p-[1rem]">
-                  <div className="flex flex-row w-full">
-                    <div className="w-8/12">
-                      <div className="grid grid-cols-1 gap-[0.25rem]">
-                        <div className="rounded bg-[#f44336] px-[0.5rem] w-[8.75rem]">
-                          <p className="text-white text-center">
-                            SAVE{" "}
-                            <b>
-                              {Math.floor(
-                                ((item.pricing_data.strikethrough_rate_nightly -
-                                  item.pricing_data.rate_nightly) /
-                                  item.pricing_data
-                                    .strikethrough_rate_nightly) *
-                                  100
-                              ) === 0
-                                ? (
-                                    ((item.pricing_data
-                                      .strikethrough_rate_nightly -
-                                      item.pricing_data.rate_nightly) /
-                                      item.pricing_data
-                                        .strikethrough_rate_nightly) *
-                                    100
-                                  ).toFixed(2)
-                                : Math.floor(
-                                    ((item.pricing_data
-                                      .strikethrough_rate_nightly -
-                                      item.pricing_data.rate_nightly) /
-                                      item.pricing_data
-                                        .strikethrough_rate_nightly) *
-                                      100
-                                  )}
-                              %
-                            </b>{" "}
-                            TODAY!
-                          </p>
-                        </div>
-                        <p className="text-gray-500 line-through">
-                          {RupiahConverter(
-                            Number(item.pricing_data.strikethrough_rate_nightly)
-                          )}
+                    {item.cancel_policy_description === "Non-refundable" ? (
+                      <div className="flex flex-row items-center gap-[0.5rem]">
+                        <IconStrikecreditcard
+                          fill="#e82127"
+                          width={16}
+                          height={16}
+                        />
+                        <p className="text-[#e82127]">Non-refundable</p>
+                      </div>
+                    ) : (
+                      <div className="flex flex-row items-center gap-[0.5rem]">
+                        <IconCreditcard fill="#3d944e" width={16} height={16} />
+                        <p className="text-[#3d944e]">
+                          {item.cancel_policy_description}
                         </p>
-                        <div className="flex gap-x-[0.25rem]">
-                          <p className="text-gray-950">
+                      </div>
+                    )}
+                  </div>
+                  <div className="p-[1rem]">
+                    <div className="flex flex-row w-full">
+                      <div className="w-8/12">
+                        <div className="grid grid-cols-1 gap-[0.25rem]">
+                          <div className="rounded bg-[#f44336] px-[0.5rem] w-[8.75rem]">
+                            <p className="text-white text-center">
+                              SAVE{" "}
+                              <b>
+                                {Math.floor(
+                                  ((item.pricing_data
+                                    .strikethrough_rate_nightly -
+                                    item.pricing_data.rate_nightly) /
+                                    item.pricing_data
+                                      .strikethrough_rate_nightly) *
+                                    100
+                                ) === 0
+                                  ? (
+                                      ((item.pricing_data
+                                        .strikethrough_rate_nightly -
+                                        item.pricing_data.rate_nightly) /
+                                        item.pricing_data
+                                          .strikethrough_rate_nightly) *
+                                      100
+                                    ).toFixed(2)
+                                  : Math.floor(
+                                      ((item.pricing_data
+                                        .strikethrough_rate_nightly -
+                                        item.pricing_data.rate_nightly) /
+                                        item.pricing_data
+                                          .strikethrough_rate_nightly) *
+                                        100
+                                    )}
+                                %
+                              </b>{" "}
+                              TODAY!
+                            </p>
+                          </div>
+                          <p className="text-gray-500 line-through">
                             {RupiahConverter(
-                              Number(item.pricing_data.rate_nightly)
-                            )}{" "}
-                            / night
+                              Number(
+                                item.pricing_data.strikethrough_rate_nightly
+                              )
+                            )}
                           </p>
-                          <IconAsterisk fill="#b9b9b9" height={8} width={8} />
-                        </div>
-                        <p className="text-gray-500">after tax & fees</p>
-                        <div className="flex flex-row items-center gap-x-[0.25rem]">
-                          <IconAsterisk fill="#b9b9b9" height={8} width={8} />
-                          <p className="text-gray-400">
-                            Member-only price, valid in app only
-                          </p>
+                          <div className="flex gap-x-[0.25rem]">
+                            <p className="text-gray-950">
+                              {RupiahConverter(
+                                Number(item.pricing_data.rate_nightly)
+                              )}{" "}
+                              / night
+                            </p>
+                            <IconAsterisk fill="#b9b9b9" height={8} width={8} />
+                          </div>
+                          <p className="text-gray-500">after tax & fees</p>
+                          <div className="flex flex-row items-center gap-x-[0.25rem]">
+                            <IconAsterisk fill="#b9b9b9" height={8} width={8} />
+                            <p className="text-gray-400">
+                              Member-only price, valid in app only
+                            </p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="w-4/12 flex items-end justify-end">
-                      <div className="flex flex-col gap-[0.5rem]">
-                        <button className="bg-[#1a73e8] rounded px-[1rem] h-[2rem] text-white font-medium">
-                          Book Now
-                        </button>
-                        <div className="flex flex-row gap-x-[0.25rem] items-center">
-                          <IconStar width={12} height={12} fill="#1a73e8" />
-                          <p className="text-[#1a73e8]">
-                            Collect {item.pricing_data.wisata_point} points
-                          </p>
+                      <div className="w-4/12 flex items-end justify-end">
+                        <div className="flex flex-col gap-[0.5rem]">
+                          <button className="bg-[#1a73e8] rounded px-[1rem] h-[2rem] text-white font-medium">
+                            Book Now
+                          </button>
+                          <div className="flex flex-row gap-x-[0.25rem] items-center">
+                            <IconStar width={12} height={12} fill="#1a73e8" />
+                            <p className="text-[#1a73e8]">
+                              Collect {item.pricing_data.wisata_point} points
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
+                </>
+              ))}
             </div>
-          ))
-        )
+          </div>
+        ))
       ) : (
-        <>empty</>
+        <p className="text-center font-medium text-green-900">Loading...</p>
       )}
     </>
   );
